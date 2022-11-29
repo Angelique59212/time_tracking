@@ -1,32 +1,37 @@
-import * as stream from "stream";
+import {container} from "./recuperation";
 
-let container:HTMLDivElement = document.getElementById('container') as HTMLDivElement;
+export let AddProject: any = function (this: any) {
+    this.display = function () {
+        let containerProject: HTMLDivElement = document.createElement('div')  as HTMLDivElement;
+        let button: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
+        button.innerText = 'Créer un projet';
 
-interface ProjectInterface {
-    title:string,
-    timeGlobal: typeof setInterval,
-    calendar: Date,
-    task: string,
-    stopWatch: typeof setInterval
-}
+        container.appendChild(containerProject);
+        containerProject.appendChild(button);
 
-let Project:  ProjectInterface = {
-let containerProject: HTMLDivElement = document.createElement('div')  as HTMLDivElement;
-let button: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
-button.innerText = 'Créer un projet';
+        button.addEventListener('click', function () {
+            let project: HTMLDivElement = document.createElement('div') as HTMLDivElement;
+            let title: HTMLElement = document.createElement('h1') as HTMLElement;
+            let input:HTMLInputElement = document.createElement('input') as HTMLInputElement;
+            let buttonValidate: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
 
-container.appendChild(containerProject);
-containerProject.appendChild(button);
-containerProject.style.border = '1px solid red';
+            buttonValidate.innerText = 'Valider';
 
-button.addEventListener('click', function () {
-    let project: HTMLDivElement = document.createElement('div') as HTMLDivElement;
-    containerProject.appendChild(project);
-    project.style.border = '1px solid black';
-    project.style.height = "200vh";
-    let title = document.createElement('h1') as HTMLElement;
+            containerProject.appendChild(project);
+            project.appendChild(title);
+            project.appendChild(input);
+            project.appendChild(buttonValidate);
 
+            buttonValidate.addEventListener('click', ()=> {
+                let valueTitle: string = input.value;
+                title.innerHTML = valueTitle.toString();
 
+                input.style.display = 'none';
+                buttonValidate.style.display = 'none';
+            })
 
-})
+            project.style.border = '1px solid black';
+
+        })
+    }
 }

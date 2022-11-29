@@ -508,6 +508,62 @@ function styleTagTransform(css, styleElement) {
 
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./assets/Project.ts":
+/*!***************************!*\
+  !*** ./assets/Project.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.AddProject = void 0;
+const recuperation_1 = __webpack_require__(/*! ./recuperation */ "./assets/recuperation.ts");
+let AddProject = function () {
+    this.display = function () {
+        let containerProject = document.createElement('div');
+        let button = document.createElement('button');
+        button.innerText = 'Créer un projet';
+        recuperation_1.container.appendChild(containerProject);
+        containerProject.appendChild(button);
+        button.addEventListener('click', function () {
+            let project = document.createElement('div');
+            let title = document.createElement('h1');
+            let input = document.createElement('input');
+            let buttonValidate = document.createElement('button');
+            buttonValidate.innerText = 'Valider';
+            containerProject.appendChild(project);
+            project.appendChild(title);
+            project.appendChild(input);
+            project.appendChild(buttonValidate);
+            buttonValidate.addEventListener('click', () => {
+                let valueTitle = input.value;
+                title.innerHTML = valueTitle.toString();
+                input.style.display = 'none';
+                buttonValidate.style.display = 'none';
+            });
+            project.style.border = '1px solid black';
+        });
+    };
+};
+exports.AddProject = AddProject;
+
+
+/***/ }),
+
+/***/ "./assets/recuperation.ts":
+/*!********************************!*\
+  !*** ./assets/recuperation.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.container = void 0;
+exports.container = document.getElementById('container');
+
+
 /***/ })
 
 /******/ 	});
@@ -593,6 +649,9 @@ var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! ./styles/style.scss */ "./assets/styles/style.scss");
+const Project_1 = __webpack_require__(/*! ./Project */ "./assets/Project.ts");
+let Project = new Project_1.AddProject();
+Project.display();
 
 })();
 
