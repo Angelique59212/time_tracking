@@ -42,7 +42,7 @@ header {
 
   .inputTitle {
     padding: vars.$padding;
-    margin: 0.8rem;
+    margin: vars.$margin;
   }
 
   .title {
@@ -59,7 +59,12 @@ header {
 }
 
 .divItems {
+  display: flex;
+  flex-direction: column;
   width: 5vw;
   height: 9vh;
   border: #{vars.$border}px solid black;
 }
+//.fa-clock .fa-calendar-days {
+//  color: #6060ce;
+//}

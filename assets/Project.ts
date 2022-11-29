@@ -34,11 +34,17 @@ export let AddProject: any = function (this: any) {
 
                 let divItems: HTMLDivElement = document.createElement('div') as HTMLDivElement;
                 let iconItem: HTMLElement = document.createElement('i') as HTMLElement;
+                let iconItem2: HTMLElement = document.createElement('i') as HTMLElement;
 
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
+                divItems.appendChild(iconItem2);
 
                 divItems.className = 'divItems';
+                iconItem.className = 'fa-regular fa-clock';
+                iconItem2.className = 'fa-solid fa-calendar-days';
+
+                iconItem.style.color = '#6060ce';
             })
 
             project.className = 'divProject';
