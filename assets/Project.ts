@@ -1,4 +1,4 @@
-import {container} from "./recuperation";
+import {container, header} from "./recuperation";
 
 export let AddProject: any = function (this: any) {
     this.display = function () {
@@ -7,7 +7,10 @@ export let AddProject: any = function (this: any) {
         button.innerText = 'Créer un projet';
 
         container.appendChild(containerProject);
-        containerProject.appendChild(button);
+        header.appendChild(button);
+
+        containerProject.className = 'containerProject';
+        button.className = 'buttonCreateProject';
 
         button.addEventListener('click', function () {
             let project: HTMLDivElement = document.createElement('div') as HTMLDivElement;
@@ -30,8 +33,11 @@ export let AddProject: any = function (this: any) {
                 buttonValidate.style.display = 'none';
             })
 
-            project.style.border = '1px solid black';
-
+            project.className = 'divProject';
+            title.className = 'title';
+            input.className = 'inputTitle';
+            buttonValidate.className = 'buttonValidate';
         })
+
     }
 }

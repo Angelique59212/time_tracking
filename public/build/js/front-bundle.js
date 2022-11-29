@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  background-color: #d2d0ce;\n}\n\nheader {\n  display: flex;\n  justify-content: space-around;\n  margin: 1rem;\n  padding: 1rem;\n}\n\nheader h1 {\n  font-size: 3.5rem;\n  color: #831de1;\n}\n\n.buttonCreateProject, .buttonValidate {\n  padding: 0.5rem;\n  font-weight: bold;\n  font-size: 2rem;\n}\n\n.containerProject {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.divProject {\n  width: 30vw;\n  height: 30vh;\n  margin: 2rem;\n  border: 8px double #8c8c91;\n  border-radius: 0.4rem;\n}\n\n.inputTitle {\n  padding: 0.5rem;\n  margin: 0.8rem;\n}\n\n.buttonValidate {\n  padding: 0.2rem;\n}\n\n.title {\n  padding: 1.2rem;\n}", "",{"version":3,"sources":["webpack://./assets/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,SAAA;EACA,UAAA;EACA,sBAAA;AACF;;AAEA;EACE,gBAAA;AACF;;AAEA;EACE,yBAAA;AACF;;AAEA;EACE,aAAA;EACA,6BAAA;EACA,YAAA;EACA,aAAA;AACF;;AAEA;EACE,iBAAA;EACA,cAAA;AACF;;AAEA;EACE,eAAA;EACA,iBAAA;EACA,eAAA;AACF;;AAEA;EACE,aAAA;EACA,eAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,0BAAA;EACA,qBAAA;AACF;;AAEA;EACE,eAAA;EACA,cAAA;AACF;;AAEA;EAEE,eAAA;AAAF;;AAGA;EACE,eAAA;AAAF","sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  background-color: #d2d0ce;\n}\n\nheader {\n  display: flex;\n  justify-content: space-around;\n  margin: 1rem;\n  padding: 1rem;\n}\n\nheader  h1 {\n  font-size: 3.5rem;\n  color: #831de1;\n}\n\n.buttonCreateProject  {\n  padding: 0.5rem;\n  font-weight: bold;\n  font-size: 2rem;\n}\n\n.containerProject {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.divProject {\n  width: 30vw;\n  height: 30vh;\n  margin: 2rem;\n  border: 8px double #8c8c91;\n  border-radius: 0.4rem;\n}\n\n.inputTitle {\n  padding: 0.5rem;\n  margin: 0.8rem;\n}\n\n.buttonValidate {\n  @extend .buttonCreateProject;\n  padding: 0.2rem;\n}\n\n.title {\n  padding: 1.2rem;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -526,7 +526,9 @@ let AddProject = function () {
         let button = document.createElement('button');
         button.innerText = 'Créer un projet';
         recuperation_1.container.appendChild(containerProject);
-        containerProject.appendChild(button);
+        recuperation_1.header.appendChild(button);
+        containerProject.className = 'containerProject';
+        button.className = 'buttonCreateProject';
         button.addEventListener('click', function () {
             let project = document.createElement('div');
             let title = document.createElement('h1');
@@ -543,7 +545,10 @@ let AddProject = function () {
                 input.style.display = 'none';
                 buttonValidate.style.display = 'none';
             });
-            project.style.border = '1px solid black';
+            project.className = 'divProject';
+            title.className = 'title';
+            input.className = 'inputTitle';
+            buttonValidate.className = 'buttonValidate';
         });
     };
 };
@@ -560,8 +565,9 @@ exports.AddProject = AddProject;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.container = void 0;
+exports.header = exports.container = void 0;
 exports.container = document.getElementById('container');
+exports.header = document.querySelector('header');
 
 
 /***/ })
