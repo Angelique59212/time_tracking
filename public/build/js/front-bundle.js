@@ -593,20 +593,6 @@ var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! ./styles/style.scss */ "./assets/styles/style.scss");
-let containerProject = document.createElement('div');
-let button = document.createElement('button');
-button.innerText = 'Créer un projet';
-let container = document.getElementById('container');
-container.appendChild(containerProject);
-containerProject.appendChild(button);
-containerProject.style.border = '1px solid red';
-button.addEventListener('click', function () {
-    let project = document.createElement('div');
-    containerProject.appendChild(project);
-    project.style.border = '1px solid black';
-    project.style.height = "200vh";
-    let title = document.createElement('h1');
-});
 
 })();
 
