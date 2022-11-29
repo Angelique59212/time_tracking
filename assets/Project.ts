@@ -31,6 +31,14 @@ export let AddProject: any = function (this: any) {
 
                 input.style.display = 'none';
                 buttonValidate.style.display = 'none';
+
+                let divItems: HTMLDivElement = document.createElement('div') as HTMLDivElement;
+                let iconItem: HTMLElement = document.createElement('i') as HTMLElement;
+
+                project.appendChild(divItems);
+                divItems.appendChild(iconItem);
+
+                divItems.className = 'divItems';
             })
 
             project.className = 'divProject';
@@ -38,6 +46,5 @@ export let AddProject: any = function (this: any) {
             input.className = 'inputTitle';
             buttonValidate.className = 'buttonValidate';
         })
-
     }
 }

@@ -36,6 +36,8 @@ header {
     margin: 2rem;
     border: 8px double #8c8c91;
     border-radius: 0.4rem;
+
+
   }
 
   .inputTitle {
@@ -54,4 +56,10 @@ header {
   font-weight: vars.$font-weight;
   font-size: vars.$font-size;
   padding: 0.2rem;
+}
+
+.divItems {
+  width: 5vw;
+  height: 9vh;
+  border: #{vars.$border}px solid black;
 }
