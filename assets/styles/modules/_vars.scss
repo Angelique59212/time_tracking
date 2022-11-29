@@ -1,0 +1,16 @@
+.reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.generic-header {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+$padding : 0.5rem;
+$font-weight: bold;
+$font-size: 2rem;
