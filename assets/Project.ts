@@ -1,4 +1,5 @@
 import {container, header} from "./recuperation";
+import {AddTask} from "./Tasks";
 
 export let AddProject: any = function (this: any) {
     this.display = function () {
@@ -50,6 +51,9 @@ export let AddProject: any = function (this: any) {
                 divBottom.appendChild(view);
                 divBottom.appendChild(addTask);
 
+                let Task: any = new AddTask();
+                Task.newTask(project);
+
                 divItems.className = 'divItems';
                 iconItem.className = 'fa-regular fa-clock';
                 iconItem2.className = 'fa-solid fa-calendar-days';
@@ -57,6 +61,7 @@ export let AddProject: any = function (this: any) {
                 clearAll.className = 'fa-solid fa-trash-can';
                 view.className = 'fa-solid fa-eye';
                 addTask.className = 'addTask';
+
             })
 
             project.className = 'divProject';

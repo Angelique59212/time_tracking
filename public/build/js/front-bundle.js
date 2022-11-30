@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".reset, * {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n.generic-header, header, .divItems .divBottom {\n  display: flex;\n  justify-content: space-around;\n  margin: 1rem;\n  padding: 1rem;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  background-color: #d2d0ce;\n}\n\nheader h1 {\n  font-size: 3.5rem;\n  color: #831de1;\n}\nheader .buttonCreateProject {\n  padding: 0.5rem;\n  font-weight: bold;\n  font-size: 2rem;\n}\n\n.containerProject {\n  display: flex;\n  flex-wrap: wrap;\n}\n.containerProject .divProject {\n  width: 30vw;\n  height: 40vh;\n  margin: 2rem;\n  border: 8px double #8c8c91;\n  border-radius: 0.4rem;\n}\n.containerProject .inputTitle {\n  padding: 0.5rem;\n  margin: 0.8rem;\n}\n.containerProject .title {\n  padding: 1.2rem;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.buttonValidate {\n  font-weight: bold;\n  font-size: 2rem;\n  padding: 0.2rem;\n}\n\n.divItems {\n  display: flex;\n  flex-direction: column;\n  width: 5vw;\n  height: 9vh;\n}\n.divItems .fa-clock, .divItems .fa-trash-can, .divItems .fa-eye, .divItems .fa-calendar-days {\n  color: #517573;\n  font-size: 4rem;\n  padding: 3rem;\n}\n.divItems .divBottom {\n  width: 28vw;\n}\n.divItems .fa-trash-can, .divItems .fa-eye {\n  color: #544b4b;\n  font-size: 3rem;\n}\n.divItems .fa-eye {\n  font-size: 3rem;\n}\n.divItems .addTask {\n  border: none;\n  background-color: #d2d0ce;\n}", "",{"version":3,"sources":["webpack://./assets/styles/modules/_vars.scss","webpack://./assets/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,SAAA;EACA,UAAA;EACA,sBAAA;ACCF;;ADEA;EACE,aAAA;EACA,6BAAA;EACA,YAAA;EACA,aAAA;ACCF;;AALA;EACE,gBAAA;AAQF;;AALA;EACE,yBAAA;AAQF;;AAHE;EACE,iBAAA;EACA,cAAA;AAMJ;AAHE;EACE,eDTO;ECUP,iBDRU;ECSV,eDRQ;ACaZ;;AADA;EACE,aAAA;EACA,eAAA;AAIF;AAFE;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,0BAAA;EACA,qBAAA;AAIJ;AADE;EACE,eD5BO;EC6BP,cD5BM;AC+BV;AAAE;EACE,eAAA;EACA,kBAAA;EACA,yBAAA;AAEJ;;AAEA;EACE,iBDtCY;ECuCZ,eDtCU;ECuCV,eAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,UAAA;EACA,WAAA;AACF;AACE;EACE,cAAA;EACA,eAAA;EACA,aAAA;AACJ;AAEE;EAEE,WAAA;AADJ;AAKE;EAEE,cAAA;EACA,eAAA;AAJJ;AAOE;EACE,eAAA;AALJ;AAQE;EACE,YAAA;EACA,yBAAA;AANJ","sourcesContent":[".reset {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n.generic-header {\n  display: flex;\n  justify-content: space-around;\n  margin: 1rem;\n  padding: 1rem;\n}\n\n$padding : 0.5rem;\n$margin : 0.8rem;\n$font-weight: bold;\n$font-size: 2rem;\n$border : 1;","@use \"./modules/vars\";\n\n* {\n  @extend .reset;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  background-color: #d2d0ce;\n}\n\nheader {\n  @extend .generic-header;\n  h1 {\n    font-size: 3.5rem;\n    color: #831de1;\n  }\n\n  .buttonCreateProject  {\n    padding: vars.$padding;\n    font-weight: vars.$font-weight;\n    font-size: vars.$font-size;\n  }\n}\n\n.containerProject {\n  display: flex;\n  flex-wrap: wrap;\n\n  .divProject {\n    width: 30vw;\n    height: 40vh;\n    margin: 2rem;\n    border: 8px double #8c8c91;\n    border-radius: 0.4rem;\n  }\n\n  .inputTitle {\n    padding: vars.$padding;\n    margin: vars.$margin;\n  }\n\n  .title {\n    padding: 1.2rem;\n    text-align: center;\n    text-transform: uppercase;\n  }\n}\n\n.buttonValidate {\n  font-weight: vars.$font-weight;\n  font-size: vars.$font-size;\n  padding: 0.2rem;\n}\n\n.divItems {\n  display: flex;\n  flex-direction: column;\n  width: 5vw;\n  height: 9vh;\n\n  .fa-clock , .fa-calendar-days {\n    color: #517573;\n    font-size: 4rem;\n    padding: 3rem;\n  }\n\n  .divBottom {\n    @extend .generic-header;\n    width: 28vw;\n\n  }\n\n  .fa-trash-can, .fa-eye {\n    @extend .fa-clock;\n    color: #544b4b;\n    font-size: 3rem;\n  }\n\n  .fa-eye {\n    font-size: 3rem;\n  }\n\n  .addTask {\n    border: none;\n    background-color: #d2d0ce;\n  }\n}\n\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".reset, * {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n.generic-header, header, .divItems .divBottom {\n  display: flex;\n  justify-content: space-around;\n  margin: 1rem;\n  padding: 1rem;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  background-color: #d2d0ce;\n}\n\nheader h1 {\n  font-size: 3.5rem;\n  color: #831de1;\n}\nheader .buttonCreateProject {\n  padding: 0.5rem;\n  font-weight: bold;\n  font-size: 2rem;\n}\n\n.containerProject {\n  display: flex;\n  flex-wrap: wrap;\n}\n.containerProject .divProject {\n  width: 30vw;\n  height: 40vh;\n  margin: 2rem;\n  border: 8px double #8c8c91;\n  border-radius: 0.4rem;\n}\n.containerProject .inputTitle {\n  padding: 0.5rem;\n  margin: 0.8rem;\n}\n.containerProject .title {\n  padding: 1.2rem;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.buttonValidate {\n  font-weight: bold;\n  font-size: 2rem;\n  padding: 0.2rem;\n}\n\n.divItems {\n  display: flex;\n  flex-direction: column;\n  width: 5vw;\n  height: 9vh;\n}\n.divItems .fa-clock, .divItems .fa-trash-can, .divItems .fa-eye, .divItems .fa-calendar-days {\n  color: #517573;\n  font-size: 4rem;\n  padding: 3rem;\n}\n.divItems .divBottom {\n  width: 28vw;\n}\n.divItems .fa-trash-can, .divItems .fa-eye {\n  color: #544b4b;\n  font-size: 3rem;\n}\n.divItems .fa-eye {\n  font-size: 3rem;\n}\n.divItems .addTask {\n  border: none;\n  background-color: #d2d0ce;\n}\n\n.containerTask {\n  width: 5vw;\n  height: 5vh;\n  border: 1px solid blue;\n}", "",{"version":3,"sources":["webpack://./assets/styles/modules/_vars.scss","webpack://./assets/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,SAAA;EACA,UAAA;EACA,sBAAA;ACCF;;ADEA;EACE,aAAA;EACA,6BAAA;EACA,YAAA;EACA,aAAA;ACCF;;AALA;EACE,gBAAA;AAQF;;AALA;EACE,yBAAA;AAQF;;AAHE;EACE,iBAAA;EACA,cAAA;AAMJ;AAHE;EACE,eDTO;ECUP,iBDRU;ECSV,eDRQ;ACaZ;;AADA;EACE,aAAA;EACA,eAAA;AAIF;AAFE;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,0BAAA;EACA,qBAAA;AAIJ;AADE;EACE,eD5BO;EC6BP,cD5BM;AC+BV;AAAE;EACE,eAAA;EACA,kBAAA;EACA,yBAAA;AAEJ;;AAEA;EACE,iBDtCY;ECuCZ,eDtCU;ECuCV,eAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,UAAA;EACA,WAAA;AACF;AACE;EACE,cAAA;EACA,eAAA;EACA,aAAA;AACJ;AAEE;EAEE,WAAA;AADJ;AAKE;EAEE,cAAA;EACA,eAAA;AAJJ;AAOE;EACE,eAAA;AALJ;AAQE;EACE,YAAA;EACA,yBAAA;AANJ;;AAUA;EACE,UAAA;EACA,WAAA;EACA,sBAAA;AAPF","sourcesContent":[".reset {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n.generic-header {\n  display: flex;\n  justify-content: space-around;\n  margin: 1rem;\n  padding: 1rem;\n}\n\n$padding : 0.5rem;\n$margin : 0.8rem;\n$font-weight: bold;\n$font-size: 2rem;\n$border : 1;","@use \"./modules/vars\";\n\n* {\n  @extend .reset;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  background-color: #d2d0ce;\n}\n\nheader {\n  @extend .generic-header;\n  h1 {\n    font-size: 3.5rem;\n    color: #831de1;\n  }\n\n  .buttonCreateProject  {\n    padding: vars.$padding;\n    font-weight: vars.$font-weight;\n    font-size: vars.$font-size;\n  }\n}\n\n.containerProject {\n  display: flex;\n  flex-wrap: wrap;\n\n  .divProject {\n    width: 30vw;\n    height: 40vh;\n    margin: 2rem;\n    border: 8px double #8c8c91;\n    border-radius: 0.4rem;\n  }\n\n  .inputTitle {\n    padding: vars.$padding;\n    margin: vars.$margin;\n  }\n\n  .title {\n    padding: 1.2rem;\n    text-align: center;\n    text-transform: uppercase;\n  }\n}\n\n.buttonValidate {\n  font-weight: vars.$font-weight;\n  font-size: vars.$font-size;\n  padding: 0.2rem;\n}\n\n.divItems {\n  display: flex;\n  flex-direction: column;\n  width: 5vw;\n  height: 9vh;\n\n  .fa-clock , .fa-calendar-days {\n    color: #517573;\n    font-size: 4rem;\n    padding: 3rem;\n  }\n\n  .divBottom {\n    @extend .generic-header;\n    width: 28vw;\n\n  }\n\n  .fa-trash-can, .fa-eye {\n    @extend .fa-clock;\n    color: #544b4b;\n    font-size: 3rem;\n  }\n\n  .fa-eye {\n    font-size: 3rem;\n  }\n\n  .addTask {\n    border: none;\n    background-color: #d2d0ce;\n  }\n}\n\n.containerTask {\n  width: 5vw;\n  height: 5vh;\n  border: 1px solid blue;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -520,6 +520,7 @@ module.exports = styleTagTransform;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AddProject = void 0;
 const recuperation_1 = __webpack_require__(/*! ./recuperation */ "./assets/recuperation.ts");
+const Tasks_1 = __webpack_require__(/*! ./Tasks */ "./assets/Tasks.ts");
 let AddProject = function () {
     this.display = function () {
         let containerProject = document.createElement('div');
@@ -559,6 +560,8 @@ let AddProject = function () {
                 divBottom.appendChild(clearAll);
                 divBottom.appendChild(view);
                 divBottom.appendChild(addTask);
+                let Task = new Tasks_1.AddTask();
+                Task.newTask(project);
                 divItems.className = 'divItems';
                 iconItem.className = 'fa-regular fa-clock';
                 iconItem2.className = 'fa-solid fa-calendar-days';
@@ -575,6 +578,27 @@ let AddProject = function () {
     };
 };
 exports.AddProject = AddProject;
+
+
+/***/ }),
+
+/***/ "./assets/Tasks.ts":
+/*!*************************!*\
+  !*** ./assets/Tasks.ts ***!
+  \*************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.AddTask = void 0;
+let AddTask = function () {
+    this.newTask = function (projectContainer) {
+        let containerTask = document.createElement('div');
+        containerTask.className = 'containerTask';
+        projectContainer.appendChild(containerTask);
+    };
+};
+exports.AddTask = AddTask;
 
 
 /***/ }),
