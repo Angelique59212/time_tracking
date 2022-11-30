@@ -68,6 +68,8 @@ export let AddProject: any = function (this: any) {
             title.className = 'title';
             input.className = 'inputTitle';
             buttonValidate.className = 'buttonValidate';
+
+
         })
     }
 }
