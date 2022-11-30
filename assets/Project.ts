@@ -54,6 +54,11 @@ export let AddProject: any = function (this: any) {
                 let Task: any = new AddTask();
                 Task.newTask(project);
 
+                addTask.addEventListener('click', function () {
+                    let writteTask: any = new AddTask();
+                    writteTask.inputTask();
+                })
+
                 divItems.className = 'divItems';
                 iconItem.className = 'fa-regular fa-clock';
                 iconItem2.className = 'fa-solid fa-calendar-days';
@@ -61,15 +66,12 @@ export let AddProject: any = function (this: any) {
                 clearAll.className = 'fa-solid fa-trash-can';
                 view.className = 'fa-solid fa-eye';
                 addTask.className = 'addTask';
-
             })
 
             project.className = 'divProject';
             title.className = 'title';
             input.className = 'inputTitle';
             buttonValidate.className = 'buttonValidate';
-
-
         })
     }
 }

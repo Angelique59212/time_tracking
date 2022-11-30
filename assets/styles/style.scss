@@ -29,6 +29,7 @@ header {
 .containerProject {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 
   .divProject {
     width: 39vw;
@@ -70,7 +71,7 @@ header {
 
   .divBottom {
     width: 36vw;
-    margin-top: 16rem;
+    margin-top: 12rem;
     display: flex;
     justify-content: space-between;
   }
@@ -99,6 +100,15 @@ header {
   margin-left: 13rem;
   margin-top: -10rem;
   background-color: #e8e6e3;
+
+  .inputTask {
+    display: block;
+  }
+
+  .divTask {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
 }
 
 
