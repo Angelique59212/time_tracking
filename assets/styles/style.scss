@@ -32,12 +32,10 @@ header {
 
   .divProject {
     width: 30vw;
-    height: 30vh;
+    height: 40vh;
     margin: 2rem;
     border: 8px double #8c8c91;
     border-radius: 0.4rem;
-
-
   }
 
   .inputTitle {
@@ -63,8 +61,32 @@ header {
   flex-direction: column;
   width: 5vw;
   height: 9vh;
-  border: #{vars.$border}px solid black;
+
+  .fa-clock , .fa-calendar-days {
+    color: #517573;
+    font-size: 4rem;
+    padding: 3rem;
+  }
+
+  .divBottom {
+    @extend .generic-header;
+    width: 28vw;
+
+  }
+
+  .fa-trash-can, .fa-eye {
+    @extend .fa-clock;
+    color: #544b4b;
+    font-size: 3rem;
+  }
+
+  .fa-eye {
+    font-size: 3rem;
+  }
+
+  .addTask {
+    border: none;
+    background-color: #d2d0ce;
+  }
 }
-//.fa-clock .fa-calendar-days {
-//  color: #6060ce;
-//}
+

@@ -35,16 +35,28 @@ export let AddProject: any = function (this: any) {
                 let divItems: HTMLDivElement = document.createElement('div') as HTMLDivElement;
                 let iconItem: HTMLElement = document.createElement('i') as HTMLElement;
                 let iconItem2: HTMLElement = document.createElement('i') as HTMLElement;
+                let divBottom: HTMLElement = document.createElement('div') as HTMLDivElement;
+                let clearAll: HTMLElement = document.createElement('i') as HTMLElement;
+                let view: HTMLElement = document.createElement('i') as HTMLElement;
+                let addTask: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
+
+                addTask.innerHTML = '+ Ajouter une tâche';
 
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
                 divItems.appendChild(iconItem2);
+                divItems.appendChild(divBottom);
+                divBottom.appendChild(clearAll);
+                divBottom.appendChild(view);
+                divBottom.appendChild(addTask);
 
                 divItems.className = 'divItems';
                 iconItem.className = 'fa-regular fa-clock';
                 iconItem2.className = 'fa-solid fa-calendar-days';
-
-                iconItem.style.color = '#6060ce';
+                divBottom.className = 'divBottom';
+                clearAll.className = 'fa-solid fa-trash-can';
+                view.className = 'fa-solid fa-eye';
+                addTask.className = 'addTask';
             })
 
             project.className = 'divProject';
