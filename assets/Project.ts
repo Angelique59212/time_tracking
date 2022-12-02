@@ -51,12 +51,10 @@ export let AddProject: any = function (this: any) {
                 divBottom.appendChild(view);
                 divBottom.appendChild(addTask);
 
-                let Task: any = new AddTask();
-                Task.newTask(project);
 
                 addTask.addEventListener('click', function () {
                     let writteTask: any = new AddTask();
-                    writteTask.inputTask();
+                    writteTask.inputTask(project);
                 })
 
                 divItems.className = 'divItems';

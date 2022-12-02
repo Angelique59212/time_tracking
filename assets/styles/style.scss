@@ -64,7 +64,7 @@ header {
   height: 9vh;
 
   .fa-clock , .fa-calendar-days {
-    color: #517573;
+    color: vars.$color;
     font-size: 4rem;
     padding: 3rem;
   }
@@ -107,7 +107,17 @@ header {
 
   .divTask {
     font-size: 2rem;
+    @extend .generic-header;
+    justify-content: space-between;
     padding: 0.5rem;
+
+    .fa-stopwatch {
+      color: vars.$color;
+    }
+
+    .validTask {
+      padding: vars.$padding;
+    }
   }
 }
 

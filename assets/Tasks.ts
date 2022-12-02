@@ -1,35 +1,38 @@
 export let AddTask: any = function (this:any) {
-    this.newTask = function (projectContainer: HTMLDivElement) {
+    this.inputTask = function (projectContainer : HTMLDivElement) {
         let containerTask: HTMLDivElement = document.createElement('div') as HTMLDivElement;
         containerTask.className = 'containerTask';
+        let divTask : HTMLDivElement = document.createElement('div') as HTMLDivElement;
+        let taskInput : HTMLInputElement = document.createElement('input') as HTMLInputElement;
 
         projectContainer.appendChild(containerTask);
-
-    }
-    this.inputTask = function () {
-        let taskContainer  = document.querySelector('.containerTask') as HTMLDivElement ;
-        let divTask = document.createElement('div') as HTMLDivElement;
-        let taskInput : HTMLInputElement = document.createElement('input') as HTMLInputElement;
 
         divTask.className = 'divTask';
         taskInput.className = 'inputTask';
 
-        taskContainer.appendChild(divTask);
+
+        containerTask.appendChild(divTask);
         divTask.appendChild(taskInput);
 
         let validTask: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
         validTask.innerHTML = 'Valider';
+        validTask.className = 'validTask';
 
 
         validTask.addEventListener('click', ()=> {
             taskInput.remove();
             validTask.remove();
 
+            let time : HTMLElement = document.createElement('i') as HTMLElement;
+
+            time.className = 'fa-solid fa-stopwatch';
+            divTask.appendChild(time);
+
             let contentInput = taskInput.value;
             divTask.innerHTML += contentInput.toString();
             divTask.style.borderBottom = '1px dashed black';
         })
 
-        taskContainer.appendChild(validTask);
+        divTask.appendChild(validTask);
     }
 }
