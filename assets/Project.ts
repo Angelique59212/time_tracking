@@ -51,6 +51,9 @@ export let AddProject: any = function (this: any) {
                 divBottom.appendChild(view);
                 divBottom.appendChild(addTask);
 
+                clearAll.addEventListener("click", ()=> {
+                    project.remove();
+                })
 
                 addTask.addEventListener('click', function () {
                     let writteTask: any = new AddTask();

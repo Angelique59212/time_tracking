@@ -560,6 +560,9 @@ let AddProject = function () {
                 divBottom.appendChild(clearAll);
                 divBottom.appendChild(view);
                 divBottom.appendChild(addTask);
+                clearAll.addEventListener("click", () => {
+                    project.remove();
+                });
                 addTask.addEventListener('click', function () {
                     let writteTask = new Tasks_1.AddTask();
                     writteTask.inputTask(project);
