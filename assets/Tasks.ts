@@ -10,7 +10,6 @@ export let AddTask: any = function (this:any) {
         divTask.className = 'divTask';
         taskInput.className = 'inputTask';
 
-
         containerTask.appendChild(divTask);
         divTask.appendChild(taskInput);
 
@@ -24,9 +23,19 @@ export let AddTask: any = function (this:any) {
             validTask.remove();
 
             let time : HTMLElement = document.createElement('i') as HTMLElement;
+            let timeStop : HTMLElement = document.createElement('i') as HTMLElement;
 
             time.className = 'fa-solid fa-stopwatch';
+            timeStop.className = 'fa-solid fa-stopwatch';
+            timeStop.style.color = 'red';
+
             divTask.appendChild(time);
+            divTask.appendChild(timeStop);
+
+            time.addEventListener('click',()=> {
+                console.log('test');
+
+            })
 
             let contentInput = taskInput.value;
             divTask.innerHTML += contentInput.toString();
