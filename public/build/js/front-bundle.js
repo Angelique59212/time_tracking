@@ -613,6 +613,9 @@ let AddTask = function () {
         validTask.addEventListener('click', () => {
             taskInput.remove();
             validTask.remove();
+            let contentInput = taskInput.value;
+            divTask.innerHTML += contentInput.toString();
+            divTask.style.borderBottom = '1px dashed black';
             let time = document.createElement('i');
             let timeStop = document.createElement('i');
             time.className = 'fa-solid fa-stopwatch';
@@ -620,12 +623,11 @@ let AddTask = function () {
             timeStop.style.color = 'red';
             divTask.appendChild(time);
             divTask.appendChild(timeStop);
-            time.addEventListener('click', () => {
-                console.log('test');
-            });
-            let contentInput = taskInput.value;
-            divTask.innerHTML += contentInput.toString();
-            divTask.style.borderBottom = '1px dashed black';
+            if (time) {
+                time.addEventListener('click', () => {
+                    console.log('test');
+                });
+            }
         });
         divTask.appendChild(validTask);
     };
