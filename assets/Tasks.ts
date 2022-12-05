@@ -17,10 +17,13 @@ export let AddTask: any = function (this:any) {
         validTask.innerHTML = 'Valider';
         validTask.className = 'validTask';
 
-
         validTask.addEventListener('click', ()=> {
             taskInput.remove();
             validTask.remove();
+
+            let contentInput = taskInput.value;
+            divTask.innerHTML += contentInput.toString();
+            divTask.style.borderBottom = '1px dashed black';
 
             let time : HTMLElement = document.createElement('i') as HTMLElement;
             let timeStop : HTMLElement = document.createElement('i') as HTMLElement;
@@ -32,14 +35,11 @@ export let AddTask: any = function (this:any) {
             divTask.appendChild(time);
             divTask.appendChild(timeStop);
 
-            time.addEventListener('click',()=> {
-                console.log('test');
-
-            })
-
-            let contentInput = taskInput.value;
-            divTask.innerHTML += contentInput.toString();
-            divTask.style.borderBottom = '1px dashed black';
+            if (time) {
+                time.addEventListener('click',()=> {
+                    console.log('test');
+                })
+            }
         })
 
         divTask.appendChild(validTask);
