@@ -521,7 +521,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AddProject = void 0;
 const recuperation_1 = __webpack_require__(/*! ./recuperation */ "./assets/recuperation.ts");
 const Tasks_1 = __webpack_require__(/*! ./Tasks */ "./assets/Tasks.ts");
-let AddProject = function () {
+let AddProject = function (textTime) {
     this.display = function () {
         let containerProject = document.createElement('div');
         let button = document.createElement('button');
@@ -557,7 +557,7 @@ let AddProject = function () {
                 containerTask.className = 'containerTask';
                 textTime.className = 'textTime';
                 addTask.innerHTML = '+ Ajouter une tâche';
-                textTime.innerHTML = '0.0.0';
+                textTime.innerHTML = '00.00.00';
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
                 divItems.appendChild(textTime);
@@ -570,7 +570,7 @@ let AddProject = function () {
                     project.remove();
                 });
                 addTask.addEventListener('click', function () {
-                    let writteTask = new Tasks_1.AddTask(containerTask);
+                    let writteTask = new Tasks_1.AddTask(containerTask, textTime);
                     writteTask.inputTask(project);
                 });
                 divItems.className = 'divItems';
@@ -597,12 +597,13 @@ exports.AddProject = AddProject;
 /*!*************************!*\
   !*** ./assets/Tasks.ts ***!
   \*************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AddTask = void 0;
-let AddTask = function (containerTask) {
+const CountWatch_1 = __webpack_require__(/*! ./styles/CountWatch */ "./assets/styles/CountWatch.ts");
+let AddTask = function (containerTask, textTime, time, timeStop) {
     this.inputTask = function (projectContainer) {
         let divTask = document.createElement('div');
         let taskInput = document.createElement('input');
@@ -625,12 +626,10 @@ let AddTask = function (containerTask) {
             time.className = 'fa-solid fa-stopwatch';
             timeStop.className = 'fa-solid fa-stopwatch';
             timeStop.style.color = 'red';
+            let timer = new CountWatch_1.CountWatch(textTime, time, timeStop);
+            timer.counterWatch;
             divTask.appendChild(time);
             divTask.appendChild(timeStop);
-            if (time) {
-                time.addEventListener('click', () => {
-                });
-            }
         });
         divTask.appendChild(validTask);
     };
@@ -651,6 +650,50 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.header = exports.container = void 0;
 exports.container = document.getElementById('container');
 exports.header = document.querySelector('header');
+
+
+/***/ }),
+
+/***/ "./assets/styles/CountWatch.ts":
+/*!*************************************!*\
+  !*** ./assets/styles/CountWatch.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CountWatch = void 0;
+const CountWatch = function (textTime, time, timeStop) {
+    let hours = 0;
+    let minutes = 0;
+    let seconds = 0;
+    let timeWatch;
+    if (time) {
+        time.addEventListener('click', () => {
+            timeWatch = setInterval(this.counterWatch = () => {
+                hours = parseInt(String(hours));
+                minutes = parseInt(String(minutes));
+                seconds = parseInt(String(seconds));
+                seconds++;
+                if (seconds == 60) {
+                    minutes++;
+                    seconds = 0;
+                }
+                if (minutes == 60) {
+                    hours++;
+                    minutes = 0;
+                }
+                textTime.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+            }, 1000);
+        });
+    }
+    if (timeStop) {
+        timeStop.addEventListener('click', () => {
+            clearInterval(timeWatch);
+        });
+    }
+};
+exports.CountWatch = CountWatch;
 
 
 /***/ })

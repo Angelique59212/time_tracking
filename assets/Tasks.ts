@@ -1,4 +1,6 @@
-export let AddTask: any = function (this:any, containerTask:HTMLDivElement) {
+import {CountWatch} from "./styles/CountWatch";
+
+export let AddTask: any = function (this:any,  containerTask:HTMLDivElement, textTime:HTMLElement , time:HTMLElement, timeStop:HTMLElement) {
     this.inputTask = function (projectContainer : HTMLDivElement) {
         let divTask : HTMLDivElement = document.createElement('div') as HTMLDivElement;
         let taskInput : HTMLInputElement = document.createElement('input') as HTMLInputElement;
@@ -30,14 +32,11 @@ export let AddTask: any = function (this:any, containerTask:HTMLDivElement) {
             timeStop.className = 'fa-solid fa-stopwatch';
             timeStop.style.color = 'red';
 
+            let timer:any = new CountWatch(textTime,time,timeStop);
+            timer.counterWatch;
+
             divTask.appendChild(time);
             divTask.appendChild(timeStop);
-
-            if (time) {
-                time.addEventListener('click',()=> {
-
-                })
-            }
         })
 
         divTask.appendChild(validTask);

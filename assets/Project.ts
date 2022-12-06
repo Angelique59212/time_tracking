@@ -1,7 +1,7 @@
 import {container, header} from "./recuperation";
 import {AddTask} from "./Tasks";
 
-export let AddProject: any = function (this: any) {
+export let AddProject: any = function (this: any, textTime:HTMLElement) {
     this.display = function () {
         let containerProject: HTMLDivElement = document.createElement('div')  as HTMLDivElement;
         let button: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
@@ -42,12 +42,12 @@ export let AddProject: any = function (this: any) {
                 let view: HTMLElement = document.createElement('i') as HTMLElement;
                 let addTask: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
                 let containerTask: HTMLDivElement = document.createElement('div') as HTMLDivElement;
-                containerTask.className = 'containerTask';
 
+                containerTask.className = 'containerTask';
                 textTime.className = 'textTime';
 
                 addTask.innerHTML = '+ Ajouter une tâche';
-                textTime.innerHTML = '0.0.0';
+                textTime.innerHTML = '00.00.00';
 
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
@@ -63,7 +63,7 @@ export let AddProject: any = function (this: any) {
                 })
 
                 addTask.addEventListener('click', function () {
-                    let writteTask: any = new AddTask(containerTask);
+                    let writteTask: any = new AddTask(containerTask, textTime);
                     writteTask.inputTask(project);
                 })
 
