@@ -35,16 +35,23 @@ export let AddProject: any = function (this: any) {
 
                 let divItems: HTMLDivElement = document.createElement('div') as HTMLDivElement;
                 let iconItem: HTMLElement = document.createElement('i') as HTMLElement;
+                let textTime : HTMLElement = document.createElement('p') as HTMLElement;
                 let iconItem2: HTMLElement = document.createElement('i') as HTMLElement;
                 let divBottom: HTMLElement = document.createElement('div') as HTMLDivElement;
                 let clearAll: HTMLElement = document.createElement('i') as HTMLElement;
                 let view: HTMLElement = document.createElement('i') as HTMLElement;
                 let addTask: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
+                let containerTask: HTMLDivElement = document.createElement('div') as HTMLDivElement;
+                containerTask.className = 'containerTask';
+
+                textTime.className = 'textTime';
 
                 addTask.innerHTML = '+ Ajouter une tâche';
+                textTime.innerHTML = '0.0.0';
 
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
+                divItems.appendChild(textTime);
                 divItems.appendChild(iconItem2);
                 divItems.appendChild(divBottom);
                 divBottom.appendChild(clearAll);
@@ -56,7 +63,7 @@ export let AddProject: any = function (this: any) {
                 })
 
                 addTask.addEventListener('click', function () {
-                    let writteTask: any = new AddTask();
+                    let writteTask: any = new AddTask(containerTask);
                     writteTask.inputTask(project);
                 })
 

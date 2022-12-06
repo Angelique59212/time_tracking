@@ -1,7 +1,5 @@
-export let AddTask: any = function (this:any) {
+export let AddTask: any = function (this:any, containerTask:HTMLDivElement) {
     this.inputTask = function (projectContainer : HTMLDivElement) {
-        let containerTask: HTMLDivElement = document.createElement('div') as HTMLDivElement;
-        containerTask.className = 'containerTask';
         let divTask : HTMLDivElement = document.createElement('div') as HTMLDivElement;
         let taskInput : HTMLInputElement = document.createElement('input') as HTMLInputElement;
 
@@ -37,7 +35,7 @@ export let AddTask: any = function (this:any) {
 
             if (time) {
                 time.addEventListener('click',()=> {
-                    console.log('test');
+
                 })
             }
         })
