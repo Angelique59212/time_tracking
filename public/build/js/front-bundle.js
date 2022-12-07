@@ -559,6 +559,8 @@ let AddProject = function (textTime) {
                 textTime.className = 'textTime';
                 addTask.innerHTML = '+ Ajouter une tâche';
                 textTime.innerHTML = '00.00.00';
+                textTime.style.fontSize = '1.3rem';
+                textTime.style.fontWeight = 'bold';
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
                 divItems.appendChild(textTime);

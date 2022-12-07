@@ -49,6 +49,8 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
 
                 addTask.innerHTML = '+ Ajouter une tâche';
                 textTime.innerHTML = '00.00.00';
+                textTime.style.fontSize = '1.3rem';
+                textTime.style.fontWeight = 'bold';
 
                 project.appendChild(divItems);
                 divItems.appendChild(iconItem);
@@ -59,7 +61,6 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
                 divBottom.appendChild(link);
                 link.appendChild(view);
                 divBottom.appendChild(addTask);
-
 
                 clearAll.addEventListener("click", ()=> {
                     project.remove();
