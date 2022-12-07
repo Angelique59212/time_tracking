@@ -79,8 +79,6 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
                 addTask.className = 'addTask';
 
                 link.href = "detailsProject.html";
-
-
             })
 
             project.className = 'divProject';
@@ -88,9 +86,6 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
             input.className = 'inputTitle';
             buttonValidate.className = 'buttonValidate';
 
-            // window.localStorage.setItem("Project", JSON.stringify(AddProject));
-            // let newProject = window.localStorage.getItem("AddProject");
-            // console.log(JSON.parse(newProject));
         })
     }
 }
