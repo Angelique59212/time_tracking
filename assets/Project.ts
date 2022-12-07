@@ -38,6 +38,7 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
                 let textTime : HTMLElement = document.createElement('p') as HTMLElement;
                 let iconItem2: HTMLElement = document.createElement('i') as HTMLElement;
                 let divBottom: HTMLElement = document.createElement('div') as HTMLDivElement;
+                let link: HTMLAnchorElement = document.createElement('a') ;
                 let clearAll: HTMLElement = document.createElement('i') as HTMLElement;
                 let view: HTMLElement = document.createElement('i') as HTMLElement;
                 let addTask: HTMLButtonElement = document.createElement('button') as HTMLButtonElement;
@@ -55,8 +56,10 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
                 divItems.appendChild(iconItem2);
                 divItems.appendChild(divBottom);
                 divBottom.appendChild(clearAll);
-                divBottom.appendChild(view);
+                divBottom.appendChild(link);
+                link.appendChild(view);
                 divBottom.appendChild(addTask);
+
 
                 clearAll.addEventListener("click", ()=> {
                     project.remove();
@@ -74,12 +77,20 @@ export let AddProject: any = function (this: any, textTime:HTMLElement) {
                 clearAll.className = 'fa-solid fa-trash-can';
                 view.className = 'fa-solid fa-eye';
                 addTask.className = 'addTask';
+
+                link.href = "detailsProject.html";
+
+
             })
 
             project.className = 'divProject';
             title.className = 'title';
             input.className = 'inputTitle';
             buttonValidate.className = 'buttonValidate';
+
+            // window.localStorage.setItem("Project", JSON.stringify(AddProject));
+            // let newProject = window.localStorage.getItem("AddProject");
+            // console.log(JSON.parse(newProject));
         })
     }
 }

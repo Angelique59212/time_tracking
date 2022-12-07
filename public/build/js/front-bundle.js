@@ -550,6 +550,7 @@ let AddProject = function (textTime) {
                 let textTime = document.createElement('p');
                 let iconItem2 = document.createElement('i');
                 let divBottom = document.createElement('div');
+                let link = document.createElement('a');
                 let clearAll = document.createElement('i');
                 let view = document.createElement('i');
                 let addTask = document.createElement('button');
@@ -564,7 +565,8 @@ let AddProject = function (textTime) {
                 divItems.appendChild(iconItem2);
                 divItems.appendChild(divBottom);
                 divBottom.appendChild(clearAll);
-                divBottom.appendChild(view);
+                divBottom.appendChild(link);
+                link.appendChild(view);
                 divBottom.appendChild(addTask);
                 clearAll.addEventListener("click", () => {
                     project.remove();
@@ -580,6 +582,7 @@ let AddProject = function (textTime) {
                 clearAll.className = 'fa-solid fa-trash-can';
                 view.className = 'fa-solid fa-eye';
                 addTask.className = 'addTask';
+                link.href = "detailsProject.html";
             });
             project.className = 'divProject';
             title.className = 'title';

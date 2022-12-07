@@ -1,6 +1,6 @@
 import {CountWatch} from "./styles/CountWatch";
 
-export let AddTask: any = function (this:any,  containerTask:HTMLDivElement, textTime:HTMLElement , time:HTMLElement, timeStop:HTMLElement) {
+export let AddTask: any = function (this:any, containerTask:HTMLDivElement, textTime:HTMLElement , time:HTMLElement, timeStop:HTMLElement) {
     this.inputTask = function (projectContainer : HTMLDivElement) {
         let divTask : HTMLDivElement = document.createElement('div') as HTMLDivElement;
         let taskInput : HTMLInputElement = document.createElement('input') as HTMLInputElement;
