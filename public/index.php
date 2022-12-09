@@ -11,7 +11,8 @@ session_start();
 
 try {
     Router::route();
-} catch (ReflectionException $e) {
+}
+catch (ReflectionException $e) {
     echo "Une erreur est survenue";
 }
 
