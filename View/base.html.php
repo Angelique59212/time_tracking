@@ -13,6 +13,17 @@
     <h1>Time Tracking</h1>
 </header>
 <div id="container">
+    <div id="login"><?php
+        if (!isset($_SESSION['user'])) { ?>
+            <a href="/?c=home">Accueil</a>
+            <a href="/?c=user&a=login">Connexion</a>
+            <a href="/?c=user&a=register">Inscription</a><?php
+        }
+        else { ?>
+        <a href="/?c=home">Accueil</a>
+        <a href="/?c=user&a=disconnect">Déconnexion</a><?php
+        }?>
+    </div>
 
 </div>
 
