@@ -27,16 +27,25 @@ export let AddTask: any = function (this:any, containerTask:HTMLDivElement, text
 
             let time : HTMLElement = document.createElement('i') as HTMLElement;
             let timeStop : HTMLElement = document.createElement('i') as HTMLElement;
+            let deleteTask: HTMLElement = document.createElement('i') as HTMLElement;
 
             time.className = 'fa-solid fa-stopwatch';
             timeStop.className = 'fa-solid fa-stopwatch';
             timeStop.style.color = 'red';
+            deleteTask.className = "fa-regular fa-trash-can";
+
+            if (deleteTask) {
+                deleteTask.addEventListener('click', ()=> {
+                    divTask.remove();
+                });
+            }
 
             let timer:any = new CountWatch(textTime,time,timeStop);
             timer.counterWatch;
 
             divTask.appendChild(time);
             divTask.appendChild(timeStop);
+            divTask.appendChild(deleteTask);
         })
 
         divTask.appendChild(validTask);

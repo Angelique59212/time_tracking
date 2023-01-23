@@ -43,10 +43,10 @@ class UserController extends AbstractController
 
                 if (null === $user) {
                     $user = R::dispense('user');
-                    $user->firstname = $firstname;
-                    $user->lastname = $lastname;
-                    $email->email = $email;
-                    $user->password = password_hash($password, PASSWORD_ARGON2I);
+                    $user->userFirstname = $firstname;
+                    $user->userLastname = $lastname;
+                    $email->userEmail = $email;
+                    $user->userPassword = password_hash($password, PASSWORD_ARGON2I);
 
                     R::store($user);
                 }else {
@@ -61,20 +61,19 @@ class UserController extends AbstractController
 //
 //        if($this->verifyFormSubmit()) {
 //            $user = R::dispense('user');
-//            $user->mail = $this->dataClean($this->getFormField('email'));
-//            $user->firstname = $this->dataClean($this->getFormField('firstname'));
-//            $user->lastname = $this->dataClean($this->getFormField('lastname'));
-//            $user->password = $_POST['password'];
-//            $user->passwordRepeat = $_POST['password-repeat'];
+//            $user->userMail = $this->dataClean($this->getFormField('email'));
+//            $user->userFirstname = $this->dataClean($this->getFormField('firstname'));
+//            $user->userLastname = $this->dataClean($this->getFormField('lastname'));
+//            $user->userPassword = $_POST['password'];
+//            $user->userPasswordRepeat = $_POST['password-repeat'];
 //
 //            $errors = [];
-//            $mail = filter_var($user->mail, FILTER_SANITIZE_EMAIL);
-//            if(!filter_var($user->mail, FILTER_VALIDATE_EMAIL)) {
+//            $mail = filter_var($user->userMail, FILTER_SANITIZE_EMAIL);
+//            if(!filter_var($user->userMail, FILTER_VALIDATE_EMAIL)) {
 //                $errors[] = "L'adresse mail n'est pas valide";
 //            }
 //
 //            if($this->checkPassword($_POST['password'], $_POST['password-repeat'])) {
-//                var_dump('test');
 //                $password = password_hash($_POST['password'], PASSWORD_ARGON2I);
 //                $insertId = R::store($user);
 //            }

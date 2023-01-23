@@ -628,13 +628,21 @@ let AddTask = function (containerTask, textTime, time, timeStop) {
             divTask.style.borderBottom = '1px dashed black';
             let time = document.createElement('i');
             let timeStop = document.createElement('i');
+            let deleteTask = document.createElement('i');
             time.className = 'fa-solid fa-stopwatch';
             timeStop.className = 'fa-solid fa-stopwatch';
             timeStop.style.color = 'red';
+            deleteTask.className = "fa-regular fa-trash-can";
+            if (deleteTask) {
+                deleteTask.addEventListener('click', () => {
+                    divTask.remove();
+                });
+            }
             let timer = new CountWatch_1.CountWatch(textTime, time, timeStop);
             timer.counterWatch;
             divTask.appendChild(time);
             divTask.appendChild(timeStop);
+            divTask.appendChild(deleteTask);
         });
         divTask.appendChild(validTask);
     };
